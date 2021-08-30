@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('mario');
+    const [author, setAuthor] = useState('faiz');
     const [image, setImage] = useState('');
     const [isLoading,setIsLoading] = useState(false);
     const history = useHistory();
@@ -47,8 +47,8 @@ const Create = () => {
                 value={author}
                 onChange={(e)=>setAuthor(e.target.value)}
                 >
-                <option value="mario">mario</option>
-                <option value="yoshi">yoshi</option>
+                <option value="mario">faiz</option>
+                <option value="yoshi">jezos</option>
                 </select>
                 <label>Blog Image</label>
                 <input
