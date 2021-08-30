@@ -5,12 +5,13 @@ const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('mario');
+    const [image, setImage] = useState('');
     const [isLoading,setIsLoading] = useState(false);
     const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const blog = { title, body, author };
+        const blog = { title, body, author,image };
     
         fetch('http://localhost:8000/blogs/', {
           method: 'POST',
@@ -34,6 +35,7 @@ const Create = () => {
                 value= {title}
                 onChange={(e) => setTitle(e.target.value)}
                 />
+                
                 <label>Blog body</label>
                 <textarea
                 required
@@ -48,6 +50,13 @@ const Create = () => {
                 <option value="mario">mario</option>
                 <option value="yoshi">yoshi</option>
                 </select>
+                <label>Blog Image</label>
+                <input
+                type="text"
+                required
+                value = {image}
+                onChange={(e) => setImage(e.target.value)}
+                />
                 { !isLoading && <button>Add Blog</button>}
                 { isLoading && <button>Adding Blog..</button>}
             </form>

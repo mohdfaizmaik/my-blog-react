@@ -19,6 +19,7 @@ const BlogDetails = () => {
                 <article>
                     <h2>{blog.title}</h2>
                     <p>Written by {blog.author}</p>
+                    <img src = {blog.image} alt="it is an blog"></img>
                     <div>{blog.body}</div>
                     <button onClick={handleClick}>Delete </button>
                 </article>
